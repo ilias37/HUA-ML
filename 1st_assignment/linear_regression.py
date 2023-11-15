@@ -1,11 +1,13 @@
 import numpy as np
 
+# 2.0
 class LinearRegression:
     
     def __init__(self):
         self.w = None # Βάρος του μοντέλου
         self.b = None # Όρος μεροληψίας του μοντέλου
 
+    # 2.1
     def fit(self, X, y):
 
         if not isinstance(X, np.ndarray) or not isinstance(y, np.ndarray):    # Έλεγχος ότι τα X και y είναι numpy arrays 
@@ -23,6 +25,7 @@ class LinearRegression:
         self.w = theta[:-1]
         self.b = theta[-1]
 
+    # 2.2
     def predict(self, X):
 
         if self.w is None or self.b is None:        # Σφάλμα αν το μοντέλο δεν έχει εκπαιδευτεί
@@ -30,6 +33,7 @@ class LinearRegression:
         
         return np.dot(X, self.w) + self.b             # y^ = Xw + b
 
+    # 2.3
     def evaluate(self, X, y):
 
         if self.w is None or self.b is None:        # Σφάλμα αν το μοντέλο δεν έχει εκπαιδευτεί
